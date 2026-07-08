@@ -95,7 +95,9 @@
 		{/if}
 	</div>
 
+	<label for="generation-select" class="visually-hidden">Filter by generation</label>
 	<select
+		id="generation-select"
 		value={generation}
 		onchange={(e) => dispatch('generationChange', (e.target as HTMLSelectElement).value)}
 		class="filter-select"
@@ -137,7 +139,9 @@
 		{/if}
 	</div>
 
+	<label for="sort-select" class="visually-hidden">Sort by</label>
 	<select
+		id="sort-select"
 		value={sortBy}
 		onchange={(e) => dispatch('sortChange', (e.target as HTMLSelectElement).value)}
 		class="filter-select"
@@ -154,6 +158,18 @@
 </div>
 
 <style>
+	.visually-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.search-toolbar {
 		display: flex;
 		gap: 1rem;
